@@ -1,4 +1,4 @@
-ARG ROS_DISTRO=humble
+ARG ROS_DISTRO=iron
 
 FROM ros:${ROS_DISTRO} AS bio_ik_test
 SHELL [ "/bin/bash", "-o", "pipefail", "-c" ]
@@ -11,7 +11,7 @@ RUN sudo apt update && sudo apt install -y \
     gdbserver \
     vim
 
-ENV WORKDIR=${HOME}/bio_ik_test/
+ENV WORKDIR=/opt/bio_ik_test/
 RUN mkdir -p ${WORKDIR}/src
 
 WORKDIR ${WORKDIR}
