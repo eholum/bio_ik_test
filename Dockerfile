@@ -31,6 +31,12 @@ COPY config/colcon-defaults.yaml ${HOME:-/root}/.colcon/defaults.yaml
 RUN source /opt/ros/${ROS_DISTRO}/setup.bash && \
     colcon build
 
+RUN sudo apt install -y \
+    ros-${ROS_DISTRO}-fastrtps-dbgsym \
+    ros-${ROS_DISTRO}-rmw-fastrtps-dynamic-cpp-dbgsym \
+    ros-${ROS_DISTRO}-rosidl-typesupport-fastrtps-cpp-dbgsym \
+    ros-${ROS_DISTRO}-rmw-fastrtps-shared-cpp-dbgsym
+
 COPY config/entrypoint.sh /entrypoint.sh
 RUN sudo chmod a+x /entrypoint.sh
 RUN echo "source /entrypoint.sh" >> ~/.bashrc
