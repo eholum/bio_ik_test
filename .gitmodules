@@ -1,4 +1,4 @@
 [submodule "src/bio_ik"]
 	path = src/bio_ik
-	url = https://github.com/PickNikRobotics/bio_ik.git
-	branch = revert-static-link
+	url = https://github.com/bit-bots/bio_ik.git
+	branch = bit-bots:fix/static-linking
