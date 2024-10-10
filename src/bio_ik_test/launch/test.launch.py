@@ -9,7 +9,7 @@ def generate_launch_description():
         package="bio_ik_test",
         executable="bio_ik_test",
         output="both",
-        prefix=['gdbserver localhost:3000'],
+        # prefix=['gdbserver localhost:3000'],
     )
 
     return LaunchDescription([bio_ik_test])
